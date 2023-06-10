@@ -1,0 +1,26 @@
+name: Call YAML file from Different Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call_yaml_file:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Fetch YAML file from another repository
+        uses: actions/checkout@v2
+        with:
+          repository: thesecurityknights/SecurityStage # Replace with the repository owner and name
+          ref: main  # Replace with the branch or commit SHA of the desired YAML file
+          path: .github/  # Replace with the path to the directory where the YAML file is located in the other repository
+
+      - name: Run the external YAML file
+        run: yarn run lint --config /start.yml
+          # Execute the desired YAML file
+          # Example: yarn run lint --config path/to/yaml-directory/lint.yml
