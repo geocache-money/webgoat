@@ -18,7 +18,7 @@ jobs:
         with:
           repository: thesecurityknights/SecurityStage # Replace with the repository owner and name
           ref: main  # Replace with the branch or commit SHA of the desired YAML file
-          path: .github/  # Replace with the path to the directory where the YAML file is located in the other repository
+          path: .security-stage # Replace with the path to the directory where the YAML file is located in the other repository
 
       - name: Run the external YAML file
         run: yarn run lint --config /start.yml
