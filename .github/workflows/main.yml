@@ -23,4 +23,4 @@ jobs:
       - name: Run the external YAML file
         run: yarn run lint --config /start.yml
           # Execute the desired YAML file
-          # Example: yarn run lint --config path/to/yaml-directory/lint.yml
+          # Example: yarn run lint --config path/to/yaml-directory/lint.yml 
